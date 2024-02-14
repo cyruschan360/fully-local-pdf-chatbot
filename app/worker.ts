@@ -32,7 +32,7 @@ const embeddings = new HuggingFaceTransformersEmbeddings({
 const voyClient = new VoyClient();
 const vectorstore = new VoyVectorStore(voyClient, embeddings);
 const ollama = new ChatOllama({
-  baseUrl: "http://gpu1.talic.hku.hk:11435",
+  baseUrl: "https://chatpdf.talic.hku.hk",
   temperature: 0.3,
   model: "mixtral:8x7b-instruct-v0.1-q3_K_M",
 });
