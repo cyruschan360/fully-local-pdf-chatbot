@@ -22,11 +22,6 @@ export function ChatMessageBubble(props: { message: ChatWindowMessage, aiEmoji?:
   const [comment, setComment] = useState("");
   const [showCommentForm, setShowCommentForm] = useState(false);
 
-  let text = document.getElementById('myText').innerHTML;
-  const copyContent = async () => {
-    
-  }
-
   async function handleCopyButtonPress(e: React.MouseEvent<HTMLButtonElement, MouseEvent>, content: string) {
     e.preventDefault();
     try {
