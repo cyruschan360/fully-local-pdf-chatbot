@@ -26,8 +26,8 @@ export function ChatMessageBubble(props: { message: ChatWindowMessage, aiEmoji?:
     e.preventDefault();
     try {
       await navigator.clipboard.writeText(content);
-      let copyBtn = (e.target.parentNode as HTMLElement).querySelector('.copy-icon');
-      let copiedBtn = (e.target.parentNode as HTMLElement).querySelector('.copied-icon');
+      let copyBtn = e.currentTarget.querySelector('.copy-icon');
+      let copiedBtn = e.currentTarget.querySelector('.copied-icon');
       if (copyBtn) { copyBtn.classList.add("hidden"); }
       if (copiedBtn) { copiedBtn.classList.remove("hidden"); }
     } catch (err) {
