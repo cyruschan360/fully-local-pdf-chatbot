@@ -22,6 +22,20 @@ export function ChatMessageBubble(props: { message: ChatWindowMessage, aiEmoji?:
   const [comment, setComment] = useState("");
   const [showCommentForm, setShowCommentForm] = useState(false);
 
+  let text = document.getElementById('myText').innerHTML;
+  const copyContent = async () => {
+    
+  }
+
+  async function handleCopyButtonPress(e: React.MouseEvent<HTMLButtonElement, MouseEvent>, content: string) {
+    e.preventDefault();
+    try {
+      await navigator.clipboard.writeText(content);
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
+
   async function handleScoreButtonPress(e: React.MouseEvent<HTMLButtonElement, MouseEvent>, score: number) {
     e.preventDefault();
     setComment("");
@@ -86,6 +100,11 @@ export function ChatMessageBubble(props: { message: ChatWindowMessage, aiEmoji?:
         <div className="whitespace-pre-wrap">
           {content.trim()}
         </div>
+      </div>
+      <div className={`ml-auto mt-2`}>
+        <button className={`p-2 border text-3xl rounded hover:bg-green-400`} onMouseUp={(e) => handleCopyButtonPress(e, content.trim())}>
+          <img src="/images/copy.png" alt="Copy to clipboard"/>
+        </button>
       </div>
       <div className={`${!runId ? "hidden" : ""} ml-auto mt-2`}>
         <button className={`p-2 border text-3xl rounded hover:bg-green-400 ${feedback && feedback.score === 1 ? "bg-green-400" : ""}`} onMouseUp={(e) => handleScoreButtonPress(e, 1)}>
