@@ -97,7 +97,7 @@ export function ChatMessageBubble(props: { message: ChatWindowMessage, aiEmoji?:
         </div>
       </div>
       <div className={`ml-auto mt-2`}>
-        <button className={`p-2 border text-3xl rounded hover:bg-green-400`} onMouseUp={(e) => handleCopyButtonPress(e, content.trim())}>
+        <button className={`p-2 text-3xl rounded`} onMouseUp={(e) => handleCopyButtonPress(e, content.trim())}>
           <img src="/images/copy.png" alt="Copy to clipboard"/>
         </button>
       </div>
