@@ -222,7 +222,7 @@ export function ChatWindow(props: {
   return (
     <div className={`flex flex-col items-center p-4 md:p-8 rounded grow overflow-hidden ${(readyToChat ? "border" : "")}`}>
       <h2 className={`${readyToChat ? "" : "hidden"} text-2xl`}>
-        <img src="/images/logo.png" alt="TALIC SmartChat">
+        <img src="/images/logo.png" alt="TALIC SmartChat"/>
       </h2>
       {readyToChat
         ? chatInterfaceComponent
