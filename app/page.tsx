@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <ChatWindow
       emoji="🏠"
-      titleText="Fully Client-Side Chat Over Documents"
+      titleText="TALIC SmartChat"
       placeholder="Try asking something about the document you just uploaded!"
     ></ChatWindow>
   );
