@@ -26,8 +26,8 @@ export function ChatMessageBubble(props: { message: ChatWindowMessage, aiEmoji?:
     e.preventDefault();
     try {
       await navigator.clipboard.writeText(content);
-      let copyBtn = document.querySelector('.copy-icon');
-      let copiedBtn = document.querySelector('.copied-icon');
+      let copyBtn = e.target.querySelector('.copy-icon');
+      let copiedBtn = e.target.querySelector('.copied-icon');
       if (copyBtn) { copyBtn.classList.add("hidden"); }
       if (copiedBtn) { copiedBtn.classList.remove("hidden"); }
     } catch (err) {
@@ -100,7 +100,8 @@ export function ChatMessageBubble(props: { message: ChatWindowMessage, aiEmoji?:
           {content.trim()}
         </div>
       </div>
-      <div className={`ml-auto mt-2`}>
+
+      <div className={`${role === "human" ? "hidden" : ""} ml-auto mt-2`}>
         <button className={`p-2 text-3xl rounded`} onMouseUp={(e) => handleCopyButtonPress(e, content.trim())}>
           <img className={`copy-icon`} src="/images/copy.png" alt="Copy to clipboard"/>
           <img className={`copied-icon hidden`} src="/images/copied.png" alt="Copied"/>
