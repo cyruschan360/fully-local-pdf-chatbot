@@ -102,6 +102,7 @@ export function ChatWindow(props: {
       setIsLoading(false);
       setInput(initialInput);
       toast(`There was an issue with querying your PDF: ${e.message}`, {
+        hideProgressBar: true,
         theme: "dark",
       });
     }
@@ -125,6 +126,7 @@ export function ChatWindow(props: {
     // const reader = new FileReader();
     if (selectedPDF === null) {
       toast(`You must select a file to embed.`, {
+        hideProgressBar: true,
         theme: "dark",
       });
       return;
@@ -150,6 +152,7 @@ export function ChatWindow(props: {
           setIsLoading(false);
           console.log(e.data.error);
           toast(`There was an issue embedding your PDF: ${e.data.error}`, {
+            hideProgressBar: true,
             theme: "dark",
           });
           break;
@@ -159,6 +162,7 @@ export function ChatWindow(props: {
           setReadyToChat(true);
           toast.dismiss(toastId.current);
           toast(`Embedding successful! Now try asking a question about your PDF.`, {
+            hideProgressBar: true,
             theme: "dark",
           });
           break;
