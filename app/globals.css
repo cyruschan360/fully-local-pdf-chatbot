@@ -37,3 +37,13 @@ pre {
 li {
   padding: 4px;
 }
+
+.copied-icon,
+.copied .copy-icon {
+  display: none;
+}
+
+.copy-icon,
+.copied .copied-icon {
+  display: block;
+}
