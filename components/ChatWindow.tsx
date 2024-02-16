@@ -40,14 +40,6 @@ export function ChatWindow(props: {
             case "log":
               console.log(e.data);
               break;
-            case "progress":
-              toast(`Processing ${e.data.length} paragraphs`, {
-                autoClose: 10 * 1000 * e.data.length,
-                closeOnClick: false,
-                pauseOnHover: false,
-                theme: "dark",
-              });
-              break;
             case "chunk":
               controller.enqueue(e.data.data);
               break;
@@ -142,6 +134,15 @@ export function ChatWindow(props: {
       switch (e.data.type) {
         case "log":
           console.log(e.data);
+          break;
+        case "progress":
+          const numOfDocs = e.data.data.length;
+          toast(`Processing ${numOfDocs} paragraphs`, {
+            autoClose: 10 * 1000 * numOfDocs,
+            closeOnClick: false,
+            pauseOnHover: false,
+            theme: "dark",
+          });
           break;
         case "error":
           worker.current?.removeEventListener("message", onMessageReceived);
