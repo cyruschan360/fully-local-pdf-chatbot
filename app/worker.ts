@@ -69,7 +69,7 @@ const embedPDF = async (pdfBlob: Blob) => {
   const splitDocs = await splitter.splitDocuments(docs);
 
   self.postMessage({
-    type: "log",
+    type: "progress",
     data: splitDocs,
   });
 

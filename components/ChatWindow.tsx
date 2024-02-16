@@ -40,6 +40,14 @@ export function ChatWindow(props: {
             case "log":
               console.log(e.data);
               break;
+            case "progress":
+              toast(`Processing: ${e.data.length} paragraphs`, {
+                autoClose: 10 * 1000 * e.data.length,
+                closeOnClick: false,
+                pauseOnHover: false,
+                theme: "dark",
+              });
+              break;
             case "chunk":
               controller.enqueue(e.data.data);
               break;
