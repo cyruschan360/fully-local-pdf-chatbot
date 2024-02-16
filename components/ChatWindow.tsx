@@ -187,7 +187,7 @@ export function ChatWindow(props: {
       <div className="flex flex-col-reverse w-full mb-4 overflow-auto grow">
         {messages.length > 0 ? (
           [...messages]
-            //.reverse()
+            .reverse()
             .map((m, i) => (
               <ChatMessageBubble key={i} message={m} aiEmoji={emoji}></ChatMessageBubble>
             ))
