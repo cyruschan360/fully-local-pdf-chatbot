@@ -118,7 +118,7 @@ export function ChatWindow(props: {
   }, []);
 
   async function embedPDF (e: FormEvent<HTMLFormElement>) {
-    let toastId = "";
+    const toastId = useRef(null);
     console.log(e);
     console.log(selectedPDF);
     e.preventDefault();
