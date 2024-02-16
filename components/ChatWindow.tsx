@@ -41,7 +41,7 @@ export function ChatWindow(props: {
               console.log(e.data);
               break;
             case "progress":
-              toast(`Processing: ${e.data.length} paragraphs`, {
+              toast(`Processing ${e.data.length} paragraphs`, {
                 autoClose: 10 * 1000 * e.data.length,
                 closeOnClick: false,
                 pauseOnHover: false,
