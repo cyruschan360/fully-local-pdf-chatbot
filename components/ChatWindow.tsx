@@ -118,6 +118,7 @@ export function ChatWindow(props: {
   }, []);
 
   async function embedPDF (e: FormEvent<HTMLFormElement>) {
+    let toastId = 0;
     console.log(e);
     console.log(selectedPDF);
     e.preventDefault();
@@ -137,8 +138,8 @@ export function ChatWindow(props: {
           break;
         case "progress":
           const numOfDocs = e.data.data.length;
-          toast(`Processing ${numOfDocs} paragraphs`, {
-            autoClose: 10 * 1000 * numOfDocs,
+          toastId = toast(`Processing ${numOfDocs} paragraphs`, {
+            autoClose: 1 * 1000 * numOfDocs,
             closeOnClick: false,
             pauseOnHover: false,
             theme: "dark",
@@ -156,6 +157,7 @@ export function ChatWindow(props: {
           worker.current?.removeEventListener("message", onMessageReceived);
           setIsLoading(false);
           setReadyToChat(true);
+          toast.dismiss(toastId);
           toast(`Embedding successful! Now try asking a question about your PDF.`, {
             theme: "dark",
           });
