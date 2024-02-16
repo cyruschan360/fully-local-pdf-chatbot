@@ -21,13 +21,16 @@ export function ChatMessageBubble(props: { message: ChatWindowMessage, aiEmoji?:
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [comment, setComment] = useState("");
   const [showCommentForm, setShowCommentForm] = useState(false);
-  const [isCopied, setIsCopied] = useState(false);
+  //const [isCopied, setIsCopied] = useState(false);
+
+  let isCopied = false;
 
   async function handleCopyButtonPress(e: React.MouseEvent<HTMLButtonElement, MouseEvent>, content: string) {
     e.preventDefault();
     try {
       await navigator.clipboard.writeText(content);
-      setIsCopied(true);
+      //setIsCopied(true);
+      isCopied = true;
     } catch (err) {
       console.error('Failed to copy: ', err);
     }
@@ -99,8 +102,8 @@ export function ChatMessageBubble(props: { message: ChatWindowMessage, aiEmoji?:
         </div>
       </div>
 
-      <div className={`${role === "human" ? "hidden" : ""} ${isCopied ? "copied" : ""} ml-auto mt-2`}>
-        <button className={`p-2 text-3xl rounded`} onMouseUp={(e) => handleCopyButtonPress(e, content.trim())}>
+      <div className={`${role === "human" ? "hidden" : ""} ml-auto mt-2`}>
+        <button className={`${isCopied ? "copied" : ""} p-2 text-3xl rounded`} onMouseUp={(e) => handleCopyButtonPress(e, content.trim())}>
           <img className={`copy-icon`} src="/images/copy.png" alt="Copy to clipboard"/>
           <img className={`copied-icon hidden`} src="/images/copied.png" alt="Copied"/>
         </button>
