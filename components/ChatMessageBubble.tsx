@@ -26,7 +26,7 @@ export function ChatMessageBubble(props: { message: ChatWindowMessage, aiEmoji?:
     e.preventDefault();
     try {
       await navigator.clipboard.writeText(content);
-      document.evt = e;
+      console.log(e);
       e.target.classList.add("copied");
     } catch (err) {
       console.error('Failed to copy: ', err);
