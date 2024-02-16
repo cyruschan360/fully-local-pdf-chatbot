@@ -22,7 +22,7 @@ export function ChatWindow(props: {
   const [readyToChat, setReadyToChat] = useState(false);
 
   const worker = useRef<Worker | null>(null);
-  const toastId = useRef(null);
+  const toastId = useRef<any>(null);
 
   async function queryStore(messages: ChatWindowMessage[]) {
     if (!worker.current) {
