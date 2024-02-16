@@ -138,7 +138,7 @@ export function ChatWindow(props: {
           break;
         case "progress":
           const numOfDocs = e.data.data.length;
-          toastId = toast(`Processing ${numOfDocs} paragraphs`, {
+          toastId.current = toast(`Processing ${numOfDocs} paragraphs`, {
             autoClose: 1 * 1000 * numOfDocs,
             closeOnClick: false,
             pauseOnHover: false,
@@ -157,7 +157,7 @@ export function ChatWindow(props: {
           worker.current?.removeEventListener("message", onMessageReceived);
           setIsLoading(false);
           setReadyToChat(true);
-          toast.dismiss(toastId);
+          toast.dismiss(toastId.current);
           toast(`Embedding successful! Now try asking a question about your PDF.`, {
             theme: "dark",
           });
