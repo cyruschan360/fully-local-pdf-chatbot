@@ -22,6 +22,7 @@ export function ChatWindow(props: {
   const [readyToChat, setReadyToChat] = useState(false);
 
   const worker = useRef<Worker | null>(null);
+  const toastId = useRef(null);
 
   async function queryStore(messages: ChatWindowMessage[]) {
     if (!worker.current) {
@@ -118,7 +119,6 @@ export function ChatWindow(props: {
   }, []);
 
   async function embedPDF (e: FormEvent<HTMLFormElement>) {
-    const toastId = useRef(null);
     console.log(e);
     console.log(selectedPDF);
     e.preventDefault();
