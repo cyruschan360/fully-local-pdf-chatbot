@@ -21,16 +21,13 @@ export function ChatMessageBubble(props: { message: ChatWindowMessage, aiEmoji?:
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [comment, setComment] = useState("");
   const [showCommentForm, setShowCommentForm] = useState(false);
-  //const [isCopied, setIsCopied] = useState(false);
-
-  let isCopied = false;
+  const [isCopied, setIsCopied] = useState(false);
 
   async function handleCopyButtonPress(e: React.MouseEvent<HTMLButtonElement, MouseEvent>, content: string) {
     e.preventDefault();
     try {
       await navigator.clipboard.writeText(content);
-      //setIsCopied(true);
-      isCopied = true;
+      setIsCopied(true);
     } catch (err) {
       console.error('Failed to copy: ', err);
     }
