@@ -101,7 +101,7 @@ export function ChatMessageBubble(props: { message: ChatWindowMessage, aiEmoji?:
       </div>
 
       <div className={`${role === "human" ? "hidden" : ""} ml-auto mt-2`}>
-        <button className={`${isCopied ? "copied" : ""} p-2 text-3xl rounded`} onMouseUp={(e) => handleCopyButtonPress(e, content.trim())}>
+        <button className={`${isCopied ? "copied" : ""} p-2 text-3xl rounded`} onMouseUp={(e) => handleCopyButtonPress(e, content.trim())} title="Copy to clipboard">
           <img className={`copy-icon`} src="/images/copy.png" alt="Copy to clipboard"/>
           <img className={`copied-icon hidden`} src="/images/copied.png" alt="Copied"/>
         </button>
