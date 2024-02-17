@@ -139,7 +139,7 @@ export function ChatWindow(props: {
           console.log(e.data);
           break;
         case "progress":
-          const numOfDocs = e.data.data.length;
+          const numOfDocs = e.data.data;
           toastId.current = toast(`Processing ${numOfDocs} paragraphs`, {
             autoClose: 1 * 1000 * numOfDocs,
             closeOnClick: false,

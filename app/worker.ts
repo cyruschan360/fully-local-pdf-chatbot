@@ -69,8 +69,13 @@ const embedPDF = async (pdfBlob: Blob) => {
   const splitDocs = await splitter.splitDocuments(docs);
 
   self.postMessage({
-    type: "progress",
+    type: "log",
     data: splitDocs,
+  });
+
+  self.postMessage({
+    type: "progress",
+    data: splitDocs.length,
   });
 
   await vectorstore.addDocuments(splitDocs);
