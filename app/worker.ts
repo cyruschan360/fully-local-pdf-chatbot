@@ -25,9 +25,9 @@ import {
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 
 const embeddings = new HuggingFaceTransformersEmbeddings({
-  modelName: "Xenova/all-MiniLM-L6-v2",
-  //modelName: "nomic-ai/nomic-embed-text-v1",
-  // Can use "Xenova/all-MiniLM-L6-v2" for less powerful but faster embeddings
+  modelName: "Xenova/gte-small", // 0.075s per slice of text
+  //modelName: "nomic-ai/nomic-embed-text-v1", // 1s per slice of text
+  // Can use "Xenova/all-MiniLM-L6-v2" for less powerful but faster embeddings // 0.06s per slice of text
 });
 
 const voyClient = new VoyClient();
