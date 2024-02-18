@@ -25,7 +25,8 @@ import {
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 
 const embeddings = new HuggingFaceTransformersEmbeddings({
-  modelName: "nomic-ai/nomic-embed-text-v1",
+  modelName: "Xenova/all-MiniLM-L6-v2",
+  //modelName: "nomic-ai/nomic-embed-text-v1",
   // Can use "Xenova/all-MiniLM-L6-v2" for less powerful but faster embeddings
 });
 
