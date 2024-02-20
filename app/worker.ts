@@ -117,7 +117,7 @@ const queryVectorStore = async (messages: ChatWindowMessage[]) => {
 
   const historyAwareRetrieverChain = await createHistoryAwareRetriever({
     llm: ollama,
-    retriever: vectorstore.asRetriever(),
+    retriever: vectorstore.asRetriever({ k: 8 }),
     rephrasePrompt: historyAwarePrompt,
   });
 
