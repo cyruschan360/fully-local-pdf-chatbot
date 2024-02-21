@@ -56,3 +56,7 @@ footer ol {
   list-style: decimal;
   padding: 0 1.2em;
 }
+
+footer p {
+  margin: 1.2em 0;
+}
