@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { useRef, useState, useEffect } from "react";
 import type { FormEvent } from "react";
+import Image from 'next/image';
 
 import { ChatMessageBubble } from "@/components/ChatMessageBubble";
 import { ChatWindowMessage } from '@/schema/ChatWindowMessage';
@@ -176,7 +177,7 @@ export function ChatWindow(props: {
     <>
       <div className="p-4 md:p-8 rounded bg-[#25252d] w-full max-h-[85%] overflow-hidden flex flex-col">
         <h1 className="text-3xl md:text-4xl mb-2 ml-auto mr-auto">
-          <img src="/images/logo.png" alt="TALIC SmartChat"/>
+          <img src="/images/logo.png" alt="TALIC SmartChat" />
         </h1>
         <h3 className="text-xl mb-4 ml-auto mr-auto">
           Chat over PDF documents 
@@ -195,6 +196,26 @@ export function ChatWindow(props: {
           <span className={isLoading ? "hidden" : ""}>Embed</span>
         </button>
       </form>
+      <footer>
+        <p>
+          This is an open source Retrieval-Augmented Generation aka RAG implementation running entirely local on consumer level hardware.
+        </p>
+        <p>
+          The LLM is <a href="https://arxiv.org/abs/2401.04088" target="_blank">Mixtral 8x7B</a>, a high-quality Mixture of Experts (MoE) model with open weights by Mistral AI quantized in 3-bit running on RTX 3090 with 24 GB VRAM. The default text embeddings model is <a href="https://arxiv.org/abs/2308.03281" target="_blank">GTE-small</a> trained by Alibaba DAMO Academy achieving 61.36 average score comparable to 60.99 of OpenAI&apos;s text-embedding-ada-002.
+        </p>
+        <p>
+          The merit of a local AI RAG setup is enhanced security, as data stays on-premises, reducing the risk of data breaches and ensuring better compliance with data protection regulations.
+        </p>
+        <p>
+          Example of questions yon can ask:
+          <ol>
+            <li>&quot;Give me a summary of the article&quot;</li>
+            <li>&quot;Draft multiple choice questions based on ......&quot;</li>
+            <li>&quot;What are the key points from the research paper on ......?&quot;</li>
+            <li>&quot;Create a list of true or false questions about ......&quot;</li>
+          </ol>
+        </p>
+      </footer>
     </>
   );
 
@@ -231,14 +252,14 @@ export function ChatWindow(props: {
             <span className={isLoading ? "hidden" : ""}>Send</span>
           </button>
         </div>
-      </form>
+      </form>      
     </>
   );
 
   return (
     <div className={`flex flex-col items-center p-4 md:p-8 rounded grow overflow-hidden ${(readyToChat ? "border" : "")}`}>
       <h2 className={`${readyToChat ? "" : "hidden"} text-2xl`}>
-        <img src="/images/logo.png" alt="TALIC SmartChat"/>
+        <img src="/images/logo.png" alt="TALIC SmartChat" />
       </h2>
       {readyToChat
         ? chatInterfaceComponent
