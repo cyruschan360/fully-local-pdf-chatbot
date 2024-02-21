@@ -201,7 +201,7 @@ export function ChatWindow(props: {
           This is an open source Retrieval-Augmented Generation (RAG) implementation running entirely local on consumer level hardware.
         </p>
         <p>
-          The LLM is <a href="https://arxiv.org/abs/2401.04088" target="_blank">Mixtral 8x7B</a> by Mistral AI quantized in 3-bit running on RTX 3090 with 24 GB VRAM. The text embeddings model is <a href="https://arxiv.org/abs/2308.03281" target="_blank">GTE-small</a> by Alibaba DAMO Academy achieving 61.36 <a href="https://huggingface.co/spaces/mteb/leaderboard" target="_blank">average score</a> comparable to 60.99 of OpenAI's text-embedding-ada-002.
+          The LLM is <a href="https://arxiv.org/abs/2401.04088" target="_blank">Mixtral 8x7B</a> by Mistral AI quantized in 3-bit running on RTX 3090 with 24 GB VRAM. The text embeddings model is <a href="https://arxiv.org/abs/2308.03281" target="_blank">GTE-small</a> by Alibaba DAMO Academy achieving 61.36 <a href="https://huggingface.co/spaces/mteb/leaderboard" target="_blank">average score</a> comparable to 60.99 of OpenAI&apos;s text-embedding-ada-002.
         </p>
         <p>
           The merit of a local RAG setup is enhanced security, as data stays on-premises, reducing the risk of data breaches and ensuring better compliance with data protection regulations.
