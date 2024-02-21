@@ -38,6 +38,10 @@ li {
   padding: 4px;
 }
 
+.logo {
+  transform: scale(0.7);
+}
+
 .copied-icon,
 .copied .copy-icon {
   display: none;
