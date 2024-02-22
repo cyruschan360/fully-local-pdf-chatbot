@@ -257,7 +257,7 @@ export function ChatWindow(props: {
   );
 
   return (
-    <div className={`flex flex-col items-center p-4 md:p-8 rounded grow ${(readyToChat ? "border" : "")}`}>
+    <div className={`flex flex-col items-center p-4 md:p-8 rounded grow ${(readyToChat ? "overflow-hidden border" : "")}`}>
       <h2 className={`${readyToChat ? "" : "hidden"} text-2xl`}>
         <img className="logo" src="/images/logo.png" alt="TALIC SmartChat" />
       </h2>
