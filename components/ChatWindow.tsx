@@ -175,7 +175,7 @@ export function ChatWindow(props: {
 
   const choosePDFComponent = (
     <>
-      <div className="p-4 md:p-8 rounded bg-[#25252d] w-full max-h-[85%] overflow-hidden flex flex-col">
+      <div className="p-4 md:p-8 rounded bg-[#25252d] w-full max-h-[85%] flex flex-col">
         <h1 className="text-3xl md:text-4xl mb-2 ml-auto mr-auto">
           <img className="logo" src="/images/logo.png" alt="TALIC SmartChat" />
         </h1>
@@ -257,7 +257,7 @@ export function ChatWindow(props: {
   );
 
   return (
-    <div className={`flex flex-col items-center p-4 md:p-8 rounded grow overflow-hidden ${(readyToChat ? "border" : "")}`}>
+    <div className={`flex flex-col items-center p-4 md:p-8 rounded grow ${(readyToChat ? "border" : "")}`}>
       <h2 className={`${readyToChat ? "" : "hidden"} text-2xl`}>
         <img className="logo" src="/images/logo.png" alt="TALIC SmartChat" />
       </h2>
