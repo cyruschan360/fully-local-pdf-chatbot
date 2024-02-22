@@ -183,8 +183,8 @@ export function ChatWindow(props: {
           Chat over PDF documents 
         </h3>
       </div>
-      <form onSubmit={embedPDF} className="mt-4 flex justify-between items-center w-full">
-        <input id="file_input" type="file" accept="pdf" className="text-white" onChange={(e) => e.target.files ? setSelectedPDF(e.target.files[0]) : null}></input>
+      <form onSubmit={embedPDF} className="mt-4 flex flex-wrap justify-between items-center w-full">
+        <input id="file_input" type="file" accept="pdf" className="py-3 text-white" onChange={(e) => e.target.files ? setSelectedPDF(e.target.files[0]) : null}></input>
         <button type="submit" className="shrink-0 px-8 py-4 bg-sky-600 rounded w-28">
           <div role="status" className={`${isLoading ? "" : "hidden"} flex justify-center`}>
             <svg aria-hidden="true" className="w-6 h-6 text-white animate-spin dark:text-white fill-sky-800" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
