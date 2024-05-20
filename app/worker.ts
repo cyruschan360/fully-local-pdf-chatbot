@@ -35,7 +35,7 @@ const vectorstore = new VoyVectorStore(voyClient, embeddings);
 const ollama = new ChatOllama({
   baseUrl: "https://smartchat.talic.hku.hk",
   temperature: 0.1,
-  model: "mixtral:8x7b-instruct-v0.1-q3_K_M",
+  model: "dolphin-llama3:256k",
   numCtx: 32000,
 });
 
