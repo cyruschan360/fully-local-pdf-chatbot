@@ -35,8 +35,8 @@ const vectorstore = new VoyVectorStore(voyClient, embeddings);
 const ollama = new ChatOllama({
   baseUrl: "https://smartchat.talic.hku.hk",
   temperature: 0.1,
-  model: "dolphin-llama3:256k",
-  numCtx: 32000,
+  model: "llama3.1:8b-instruct-q4_K_M",
+  numCtx: 128000,
 });
 
 const RESPONSE_SYSTEM_TEMPLATE = `You are an experienced researcher, expert at interpreting and answering questions based on provided sources. Using the provided context, answer the user's question to the best of your ability using the resources provided.
